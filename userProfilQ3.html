@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Details Utilisateru</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+<!--
+3.	Un utilisateur non connecté doit pouvoir cliquer sur le nom du user qui a publié une publication et être amené sur une page qui présente 
+   les différents éléments suivants : nom d’utilisateur, sa description, sa photo, son nombre de publications, ainsi que la photo de chacune des publications.
+    -->
+    <div id="container" class="container border aligns-items-center" style="width: 42rem;">
+      <h4>Detail de l'utilsateur</h4>
+                                     
+      <div class="card mb-3" style="width: 40rem;">
+        <img id="photoUser" src="https://media.tenor.com/AwNcP7zplaMAAAAd/enbyzwithfun-apongebob.gif"  alt="...">
+        <div class="card-body">
+          <p id="discriptionUser" class="card-text"></p>  
+          <hr>
+          <h5 id="nameUser" class="card-title "></h5>     
+          <hr>
+          <h6 id="postsNbrByUser" class="card-title "></h6>
+          <hr>
+        </div>
+      </div>
+      <div>
+        <h5 class="card-title mb-3" style="width: 40rem;">Photos de publications</h5>
+      </div>
+    </div>
+
+
+    <script>
+         var userId = location.search.substring(1)
+
+        fetch('https://insta-api-api.0vxq7h.easypanel.host/users/'+userId)
+          .then(resUsers=>resUsers.json())
+          .then(resUsers=>{
+
+                    const username = resUsers.username
+                    const avatarUrl = resUsers.avatarUrl
+                    const description = resUsers.description
+                    const postsNbr = resUsers.posts.length
+                    
+                    const nameUser = document.getElementById("nameUser");
+                    nameUser.textContent= username
+
+                    const discriptionUser = document.getElementById("discriptionUser");
+                    discriptionUser.textContent= description
+
+                    const postsNbrByUser = document.getElementById("postsNbrByUser");
+                    postsNbrByUser.textContent= "Publication:  "+ postsNbr
+
+                    const photoUser = document.getElementById("photoUser");
+                    photoUser.setAttribute("src", avatarUrl)
+
+
+                    for (i = 0; i < postsNbr; i++) {
+                       const pictureUrl  =resUsers.posts[i].pictureUrl
+                       const container = document.getElementById("container");
+                       const newDivCard = document.createElement('div');
+                       const newImag = document.createElement('img')
+
+                       newDivCard.setAttribute("class", "card mb-3")
+                       newDivCard.setAttribute("style", "width: 40rem;")
+                       newImag.setAttribute("class", "card-img-top")
+                       newImag.setAttribute("src", pictureUrl)
+                       newDivCard.appendChild(newImag);
+                       container.appendChild(newDivCard);
+
+                    }
+        })
+      </script>     
+
+  </body>
+</html>
