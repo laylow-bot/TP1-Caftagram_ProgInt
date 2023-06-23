@@ -1,26 +1,104 @@
+/* Styles pour le mode sombre */
+body {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
 
+#fixedSection {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  background-color: #333;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  #fixedSection {
+    padding-top: 56px;
+  }
+}
 
 .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-  }
-  
-  .popup-content {
-    background-color: #d8e5f1;
-    width: 300px;
-    padding: 20px;
-    margin: 100px auto;
-    text-align: center;
-  }
-  
-  #closePopup {
-    margin-top: 10px;
-  }
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
 
-  
+.popup-content {
+  background-color: darkslategray;
+  width: 300px;
+  padding: 20px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+#closePopup {
+  margin-top: 10px;
+}
+
+
+/* Styles pour rendre la page responsive */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: inherit;
+  justify-content: space-between;
+  max-width: 100%;
+  border: none;
+}
+
+.card {
+  width: 100%;
+  border: none;
+  padding-top: 20px;
+
+}
+
+#instalikeTitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+#instalikeTitle:hover {
+  color: green;
+  text-decoration: none;
+}
+
+#listeC {
+  align-items: center;
+  padding: 5px;
+  background-color: green;
+  color: #fff;
+}
+
+#listeC:hover {
+  padding: 5px;
+  background-color: gray;
+  color: #fff;
+  text-decoration: none;
+}
+
+#lien {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+}
