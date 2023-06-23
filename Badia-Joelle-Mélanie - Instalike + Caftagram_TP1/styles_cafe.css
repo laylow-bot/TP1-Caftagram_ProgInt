@@ -1,0 +1,128 @@
+body{
+  background-color: #222;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* Styles pour le conteneur principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+}
+
+/* Styles pour le formulaire */
+#cafe-form {
+  margin-bottom: 20px;
+}
+
+#cafe-form input[type="url"],
+#cafe-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+}
+
+#cafe-form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styles pour la liste de cafés */
+#cafe-list li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #333;
+}
+
+#cafe-list img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+#cafe-list h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+#cafe-list p {
+  margin: 0;
+  color: #ccc;
+}
+
+#cafe-list button {
+  align-self: flex-end;
+  margin-top: auto;
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styles pour le message */
+#message {
+  color: #dc3545;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+#open-form-link{
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 50px;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+#open-form-link:hover {
+  color: green;
+  text-decoration: none;
+}
+
+#caftagramTitle{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+#caftagramTitle:hover {
+  color: green;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+ 
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Caftagram App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles_cafe.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <Header>
+      <a href="homePage.html" ><h1 id="caftagramTitle" >Caftagram App</h1></a>
+    </Header>
+
+    <a href="#" id="open-form-link">+</a>
+
+<!-- Votre formulaire -->
+<div id="popup-form" style="display: none;">
+  <form id="cafe-form">
+    <input type="url" id="pictureUrl" placeholder="URL de l'image" required><br>
+    <!-- Utiliser un lien finissans en .Jpg ou .png -->
+    <input type="text" id="name" placeholder="Nom du café" required> <br>
+    <input type="text" id="description" placeholder="Description du café" required> <br>
+    <button id="add-button" type="submit">Ajouter</button>
+  </form>
+</div>
+
+    <div id="cafe-list"></div>
+
+    <div id="message"></div>
+
+  <script src="cafe.js"></script>
+</div>
+</body>
+</html>
